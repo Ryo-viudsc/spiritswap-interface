@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 
 export const BodyWrapper = styled.div`
@@ -12,9 +12,26 @@ export const BodyWrapper = styled.div`
   padding: 1rem;
 `
 
+//TODO : loading screen 
+
+
 /**
  * The styled container element that wraps the content of most pages and the tabs.
  */
 export default function AppBody({ children }: { children: React.ReactNode }) {
-  return <BodyWrapper>{children}</BodyWrapper>
+
+   const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+      console.log("loading");
+      setTimeout(() => {setLoading(false)}, 3000);
+   }, []) 
+
+  return (
+        <>{ 
+           loading ? (<div> sometest </div>)
+          :
+           (<BodyWrapper>{children}</BodyWrapper>)
+        }</>
+        )
 }

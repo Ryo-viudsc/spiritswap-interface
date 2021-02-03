@@ -28,7 +28,7 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-
+import bgImage from '../assets/images/spiritlogo.png';
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
 
@@ -55,6 +55,9 @@ const BodyWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 10;
+  //background-image: url(${bgImage}); 
+  //TODO : no repeat
+
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 16px;

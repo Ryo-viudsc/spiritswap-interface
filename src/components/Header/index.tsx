@@ -80,6 +80,18 @@ const HeaderControls = styled.div`
   `};
 `
 
+//changed here
+const HeaderTitle = styled.div<{isDark:boolean}>`
+    color: ${props => props.isDark ? 'white' : 'black'};
+    display: flex;
+    font-family: Inter var, sans-serif;
+    font-weight: bolder;
+    font-size: 24px; 
+    padding: 0 10 0 10;
+    margin-right: 3em;
+`;
+
+
 const HeaderElement = styled.div`
   display: flex;
   align-items: center;
@@ -104,10 +116,11 @@ const HeaderRow = styled(RowFixed)`
 
 const HeaderLinks = styled(Row)`
   justify-content: center;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
+   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1rem 0 1rem 1rem;
     justify-content: flex-end;
-`};
+  `};
+
 `
 
 const AccountElement = styled.div<{ active: boolean }>`
@@ -291,9 +304,12 @@ export default function Header() {
       <HeaderRow>
         <Title href=".">
           <UniIcon>
-            <img width={'32px'} src={isDark ? LogoDark : Logo} alt="logo" />
+            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo" />
           </UniIcon>
-        </Title>
+          </Title>
+          <HeaderTitle isDark={isDark} >
+             SpiritSwap
+          </HeaderTitle>
         <HeaderLinks>
           <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
             {t('swap')}
