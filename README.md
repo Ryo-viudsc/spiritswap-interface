@@ -1,4 +1,4 @@
-# Uniswap Interface  <updated UI>
+# Uniswap Interface  updated UI
 
 
 [![Lint](https://github.com/Uniswap/uniswap-interface/workflows/Lint/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ALint)
