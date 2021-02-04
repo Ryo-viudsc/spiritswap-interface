@@ -82,13 +82,19 @@ const HeaderControls = styled.div`
 
 //changed here
 const HeaderTitle = styled.div<{isDark:boolean}>`
-    color: ${props => props.isDark ? 'white' : 'black'};
+    color: ${props => props.isDark ? 'white' : '#1B1B1B'};
     display: flex;
     font-family: Inter var, sans-serif;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 24px; 
     padding: 0 10 0 10;
     margin-right: 3em;
+  
+    ${({ theme }) => theme.mediaWidth.upToMedium`
+     display: none;
+  `};
+
+
 `;
 
 

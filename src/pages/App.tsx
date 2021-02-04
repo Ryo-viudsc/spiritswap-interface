@@ -28,9 +28,11 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-import bgImage from '../assets/images/spiritlogo.png';
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
+
+import backgroundgLogo from '../assets/images/spiritlogo.png'
+
 
 const AppWrapper = styled.div`
   display: flex;
@@ -43,6 +45,7 @@ const HeaderWrapper = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
   width: 100%;
   justify-content: space-between;
+
 `
 
 const BodyWrapper = styled.div`
@@ -54,23 +57,41 @@ const BodyWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 10;
-  //background-image: url(${bgImage}); 
-  //TODO : no repeat
-
+  z-index: 1;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 16px;
     padding-top: 2rem;
   `};
+ 
+`
 
-  z-index: 1;
+//TODO : loading screen 
+export const FadedBackgroundLogo = styled.div`
+   background-image: url(${backgroundgLogo});
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   padding-top: 10vh;
+   margin-top: 10vh;
+ 
+   height: 100%;
+   width: 100%;
+   filter: blur(7px);
+   -webkit-filter: blur(7px);
+   z-index: -3;    
+   position: absolute;
+  
+   ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding-top: 5vh;
+    margin-top: 5vh;
+  `};
+
 `
 
 const Marginer = styled.div`
   margin-top: 5rem;
 `
-
 function TopLevelModals() {
   const open = useModalOpen(ApplicationModal.ADDRESS_CLAIM)
   const toggle = useToggleModal(ApplicationModal.ADDRESS_CLAIM)
@@ -87,6 +108,7 @@ export default function App() {
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
+        <FadedBackgroundLogo />
         <BodyWrapper>
           <Popups />
           <Polling />
@@ -120,6 +142,8 @@ export default function App() {
           </Web3ReactManager>
           <Marginer />
         </BodyWrapper>
+
+
       </AppWrapper>
     </Suspense>
   )

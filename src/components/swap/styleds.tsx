@@ -30,7 +30,9 @@ export const SectionBreak = styled.div`
 `
 
 export const BottomGrouping = styled.div`
+  background-color: transparent;
   margin-top: 1rem;
+  
 `
 
 export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
