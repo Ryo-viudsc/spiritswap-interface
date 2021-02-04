@@ -78,7 +78,7 @@ export const FadedBackgroundLogo = styled.div`
    height: 100%;
    width: 100%;
    filter: blur(7px);
-   -webkit-filter: blur(7px);
+ 
    z-index: -3;    
    position: absolute;
   

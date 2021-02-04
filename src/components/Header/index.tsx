@@ -31,6 +31,13 @@ import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
 import usePrevious from '../../hooks/usePrevious'
 
+export const fontImport = `
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+`;
+
+
+
+
 const HeaderFrame = styled.div`
   display: grid;
   grid-template-columns: 1fr 120px;
@@ -84,16 +91,16 @@ const HeaderControls = styled.div`
 const HeaderTitle = styled.div<{isDark:boolean}>`
     color: ${props => props.isDark ? 'white' : '#1B1B1B'};
     display: flex;
-    font-family: Inter var, sans-serif;
-    font-weight: bold;
+    //::font-family: Epura;
+    font-weight: 700;
     font-size: 24px; 
     padding: 0 10 0 10;
     margin-right: 3em;
-  
+    
+
     ${({ theme }) => theme.mediaWidth.upToMedium`
      display: none;
-  `};
-
+    `};
 
 `;
 
